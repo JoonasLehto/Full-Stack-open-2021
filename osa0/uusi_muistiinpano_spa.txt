@@ -1,0 +1,17 @@
+note over selain:
+käyttäjä täyttää ja lähettää lomakkeen,
+lomakkeelle javascriptillä lisätty tapahtumakäsittelijä
+- estää lomakkeen oletustoiminnan
+- lisää muistiinpanon selaimen muistissa olevaan listaan
+- uudelleen renderöi näytöllä näkyvät muistiinpanot
+- muodostaa uudesta muistiinpanosta xhr pyynnön ja lähettää sen palvelimelle
+end note
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over palvelin:
+palvelin käsittelee pyynnön 
+ja tallentaa muistiinpanon
+end note
+
+palvelin-->selain: HTTP STATUS 201
