@@ -1,1 +1,1 @@
-web: npm start
+web: npm run start-osa3-puhelinluettelo-backend
