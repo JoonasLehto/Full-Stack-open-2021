@@ -4,7 +4,6 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "start": "node ./osa3/puhelinluettelo-backend/index.js",
       "start-osa3-puhelinluettelo-backend": "node ./osa3/puhelinluettelo-backend/index.js"
     },
     "engines": {
