@@ -1,1 +1,1 @@
-osa3-puhelinluettelo-backend: npm start-osa3-puhelinluettelo-backend
+osa3-puhelinluettelo-backend: ./osa3/puhelinluettelo-backend npm start
