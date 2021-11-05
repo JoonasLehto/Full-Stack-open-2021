@@ -1,10 +1,11 @@
 const cors = require('cors')
 const express = require('express')
 const morgan = require('morgan')
+const path = require('path')
 
 const app = express()
 
-app.use(express.static('build'))
+app.use(express.static(path.join(__dirname, 'build')))
 app.use(cors())
 
 morgan.token('body', function (req, res) {
