@@ -43,12 +43,12 @@ async function main(name, number) {
     console.log(`added ${result.name} number ${result.number} to phonebook`)
     mongoose.connection.close()
   } else {
-      const result = await Person.find({})
-      console.log("phonebook:")
-      result.forEach(person => {
-        console.log(`${person.name} ${person.number}`)
-      })
-      mongoose.connection.close()
+    const result = await Person.find({})
+    console.log('phonebook:')
+    result.forEach(person => {
+      console.log(`${person.name} ${person.number}`)
+    })
+    mongoose.connection.close()
   }
 }
 
