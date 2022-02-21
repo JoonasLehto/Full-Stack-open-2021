@@ -127,6 +127,12 @@ const App = () => {
           setNewNumber('')
           getAllPersons()
         })
+        .catch(error => {
+          displayMessage({
+            message: error.response.data.error,
+            isError: true
+          })
+        })
     } else {
       if (window.confirm(`${newPerson.name} is already added to phonebook, replace the old number with a new one?`)) {
         personService.updatePerson(existingPerson.id, newPerson)
@@ -140,14 +146,14 @@ const App = () => {
             getAllPersons()
           })
           .catch(error => {
-            if (error && error.response && error.response.status === 404) {
+            if (error.response.status === 404) {
               displayMessage({
                 message: `Information of ${newPerson.name} has already been removed from server`,
                 isError: true
               })
-            } else {
+            } else if (error.response.status === 400) {
               displayMessage({
-                message: `Unknown error occurred while deleting ${newPerson.name} from server`,
+                message: error.response.data.error,
                 isError: true
               })
             }
@@ -167,7 +173,7 @@ const App = () => {
           getAllPersons()
         })
         .catch(error => {
-          if (error && error.response && error.response.status === 404) {
+          if (error.response.status === 404) {
             displayMessage({
               message: `Information of ${person.name} has already been removed from server`,
               isError: true
