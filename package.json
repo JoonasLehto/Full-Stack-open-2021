@@ -16,11 +16,15 @@
     "express": "^4.17.1",
     "dotenv": "^10.0.0",
     "mongoose": "^6.0.12",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^8.9.0",
+    "eslint-plugin-jest": "^26.1.1",
     "jest": "^27.5.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "supertest": "^6.2.2"
   }
 }
