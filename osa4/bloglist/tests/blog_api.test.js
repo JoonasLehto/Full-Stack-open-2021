@@ -145,10 +145,16 @@ test('url is required for new blog', async () => {
 test('blog can be deleted', async () => {
   const blogToBeRemoved = initialBlogs[0]._id
 
-  const deleteResponse = await api.delete(`api/blogs/${blogToBeRemoved}`)
+  const deleteResponse = await api.delete(`/api/blogs/${blogToBeRemoved}`)
   
   expect(deleteResponse.status).toBe(204)
-}
+
+  const getResponse = await api.get('/api/blogs')
+  const ids = getResponse.body.map(b => b.id)
+
+  expect(getResponse.body).toHaveLength(initialBlogs.length - 1)
+  expect(ids).not.toContain(blogToBeRemoved)
+})
 
 afterAll(() => {
   mongoose.connection.close()
